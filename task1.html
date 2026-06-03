@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+        body{
+            background:#f4f4f4;
+            color:#333;
+        }
+        header{
+            background:#0077b6;
+            color:white;
+            text-align:center;
+            padding:40px;
+        }
+        nav{
+            background:#023e8a;
+            padding:15px;
+            text-align:center;
+        }
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+        }
+        section{
+            max-width:900px;
+            margin:30px auto;
+            padding:20px;
+            background:white;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+        .profile-img{
+            display:block;
+            margin:20px auto;
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            object-fit:cover;
+        }
+        h2{
+            color:#0077b6;
+            margin-bottom:10px;
+        }
+        ul{
+            padding-left:20px;
+        }
+        .btn{
+            display:inline-block;
+            background:#0077b6;
+            color:white;
+            padding:12px 20px;
+            border:none;
+            border-radius:5px;
+            cursor:pointer;
+            margin-top:15px;
+        }
+        .btn:hover{
+            background:#023e8a;
+        }
+        footer{
+            text-align:center;
+            background:#023e8a;
+            color:white;
+            padding:15px;
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <p>Aspiring Web Developer</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="about">
+        <img src="../images1/gettyimages-472377867-612x612.jpg"
+             alt="Profile Photo"
+             class="profile-img">
+        <h2>About Me</h2>
+        <p>
+            Hello! I am a web development enthusiast who enjoys
+            creating modern and responsive websites. I am currently
+            learning HTML, CSS, and JavaScript and building exciting
+            projects to improve my skills.
+        </p>
+    </section>
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Git & GitHub</li>
+            <li>Responsive Web Design</li>
+        </ul>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <h3>College Major Project</h3>
+        <p>
+            A web application developed as part of my college project.
+            It focuses on solving real-world problems using modern
+            web technologies.
+        </p>
+        <br>
+        <h3>Portfolio Website</h3>
+        <p>
+            A personal portfolio website showcasing my skills,
+            projects, and achievements.
+        </p>
+    </section>
+    <section id="contact">
+        <button class="btn" onclick="showMessage()">
+            Contact Me
+        </button>
+    </section>
+    <footer>
+        <p>© 2026 Your Name | Portfolio Website</p>
+    </footer>
+    <script>
+        function showMessage() {
+            alert("Thank you for visiting my portfolio website!");
+        }
+    </script>
+</body>
+</html>
