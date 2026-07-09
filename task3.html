@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 3</title>
+<style>body{
+font-family:Arial,sans-serif;
+background:#f4f4f4;
+margin:0;
+padding:20px;
+}
+
+h1{
+text-align:center;
+}
+
+.container{
+display:flex;
+gap:20px;
+justify-content:center;
+}
+
+.quiz,.api{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 0 10px gray;
+width:300px;
+}
+
+button{
+display:block;
+margin:10px 0;
+padding:10px;
+width:100%;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+.container{
+flex-direction:column;
+align-items:center;
+}
+}
+</style>
+</head>
+<body>
+
+<h1>Advanced Styling & JavaScript</h1>
+
+<div class="container">
+
+<div class="quiz">
+<h2>Quiz</h2>
+
+<p>1. HTML stands for?</p>
+
+<button onclick="checkAnswer(this,true)">Hyper Text Markup Language</button>
+<button onclick="checkAnswer(this,false)">High Text Machine Language</button>
+
+<p>2. CSS is used for?</p>
+
+<button onclick="checkAnswer(this,true)">Styling Web Pages</button>
+<button onclick="checkAnswer(this,false)">Programming Database</button>
+
+<h3 id="result"></h3>
+</div>
+
+<div class="api">
+<h2>Random Joke</h2>
+<p id="joke">Click the button</p>
+<button onclick="getJoke()">Get Joke</button>
+</div>
+
+</div>
+
+<script>let score = 0;
+
+function checkAnswer(button, correct){
+if(correct){
+score++;
+document.getElementById("result").innerHTML="Score: "+score;
+button.style.background="green";
+}else{
+button.style.background="red";
+}
+}
+
+function getJoke(){
+fetch("https://official-joke-api.appspot.com/random_joke")
+.then(response=>response.json())
+.then(data=>{
+document.getElementById("joke").innerHTML=
+data.setup+"<br><br>"+data.punchline;
+});
+}
+</script>
+
+</body>
+</html>
